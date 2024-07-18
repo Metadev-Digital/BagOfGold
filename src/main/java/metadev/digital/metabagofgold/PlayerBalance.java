@@ -1,6 +1,6 @@
 package metadev.digital.metabagofgold;
 
-import one.lindegaard.CustomItemsLib.Core;
+import metadev.digital.metacustomitemslib.Core;
 import org.bukkit.GameMode;
 import org.bukkit.OfflinePlayer;
 

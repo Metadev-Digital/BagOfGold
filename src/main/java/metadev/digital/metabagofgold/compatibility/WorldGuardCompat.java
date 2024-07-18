@@ -7,9 +7,9 @@ import com.sk89q.worldguard.protection.ApplicableRegionSet;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
 import com.sk89q.worldguard.protection.regions.RegionQuery;
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.CustomItemsLib.compatibility.CompatPlugin;
-import one.lindegaard.CustomItemsLib.server.Servers;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
+import metadev.digital.metacustomitemslib.server.Servers;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 

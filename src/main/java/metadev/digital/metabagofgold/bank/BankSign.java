@@ -1,11 +1,11 @@
 package metadev.digital.metabagofgold.bank;
 
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.CustomItemsLib.Core;
-import one.lindegaard.CustomItemsLib.Tools;
-import one.lindegaard.CustomItemsLib.materials.Materials;
-import one.lindegaard.CustomItemsLib.rewards.Reward;
-import one.lindegaard.CustomItemsLib.server.Servers;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metacustomitemslib.Core;
+import metadev.digital.metacustomitemslib.Tools;
+import metadev.digital.metacustomitemslib.materials.Materials;
+import metadev.digital.metacustomitemslib.rewards.Reward;
+import metadev.digital.metacustomitemslib.server.Servers;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.block.Block;

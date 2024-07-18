@@ -1,7 +1,7 @@
 package metadev.digital.metabagofgold.compatibility;
 
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.CustomItemsLib.compatibility.CompatPlugin;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;

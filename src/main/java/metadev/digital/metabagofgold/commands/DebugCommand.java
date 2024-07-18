@@ -1,6 +1,6 @@
 package metadev.digital.metabagofgold.commands;
 
-import one.lindegaard.BagOfGold.BagOfGold;
+import metadev.digital.metabagofgold.BagOfGold;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 

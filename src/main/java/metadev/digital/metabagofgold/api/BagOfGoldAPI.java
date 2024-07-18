@@ -1,6 +1,6 @@
 package metadev.digital.metabagofgold.api;
 
-import one.lindegaard.BagOfGold.BagOfGold;
+import metadev.digital.metabagofgold.BagOfGold;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

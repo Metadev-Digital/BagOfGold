@@ -4,7 +4,7 @@ import com.sk89q.worldedit.IncompleteRegionException;
 import com.sk89q.worldedit.math.BlockVector3;
 import com.sk89q.worldedit.regions.CuboidRegion;
 import com.sk89q.worldedit.regions.Region;
-import one.lindegaard.MobHunting.MobHunting;
+import metadev.digital.MetaMobHunting.MobHunting;
 import org.bukkit.entity.Player;
 
 public class WorldEditHelper {

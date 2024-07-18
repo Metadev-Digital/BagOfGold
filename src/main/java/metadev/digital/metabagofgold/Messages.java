@@ -1,10 +1,10 @@
 package metadev.digital.metabagofgold;
 
-import one.lindegaard.BagOfGold.compatibility.CitizensCompat;
-import one.lindegaard.BagOfGold.compatibility.PlaceholderAPICompat;
-import one.lindegaard.CustomItemsLib.Core;
-import one.lindegaard.CustomItemsLib.Strings;
-import one.lindegaard.CustomItemsLib.compatibility.*;
+import metadev.digital.metabagofgold.compatibility.CitizensCompat;
+import metadev.digital.metabagofgold.compatibility.PlaceholderAPICompat;
+import metadev.digital.metacustomitemslib.Core;
+import metadev.digital.metacustomitemslib.Strings;
+import metadev.digital.metacustomitemslib.compatibility.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;

@@ -1,8 +1,8 @@
 package metadev.digital.metabagofgold.rewards;
 
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.BagOfGold.PlayerBalance;
-import one.lindegaard.BagOfGold.compatibility.PerWorldInventoryCompat;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metabagofgold.PlayerBalance;
+import metadev.digital.metabagofgold.compatibility.PerWorldInventoryCompat;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;

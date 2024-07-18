@@ -2,11 +2,11 @@ package metadev.digital.metabagofgold.commands;
 
 import net.citizensnpcs.api.CitizensAPI;
 import net.citizensnpcs.api.npc.NPC;
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.BagOfGold.PlayerBalance;
-import one.lindegaard.CustomItemsLib.Core;
-import one.lindegaard.CustomItemsLib.Tools;
-import one.lindegaard.CustomItemsLib.rewards.Reward;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metabagofgold.PlayerBalance;
+import metadev.digital.metacustomitemslib.Core;
+import metadev.digital.metacustomitemslib.Tools;
+import metadev.digital.metacustomitemslib.rewards.Reward;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;

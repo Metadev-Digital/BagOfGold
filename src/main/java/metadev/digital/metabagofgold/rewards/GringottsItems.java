@@ -1,8 +1,8 @@
 package metadev.digital.metabagofgold.rewards;
 
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.CustomItemsLib.Core;
-import one.lindegaard.CustomItemsLib.Tools;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metacustomitemslib.Core;
+import metadev.digital.metacustomitemslib.Tools;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;

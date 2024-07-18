@@ -1,10 +1,10 @@
 package metadev.digital.metabagofgold.storage;
 
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.BagOfGold.PlayerBalance;
-import one.lindegaard.BagOfGold.PlayerBalances;
-import one.lindegaard.CustomItemsLib.storage.DataStoreException;
-import one.lindegaard.CustomItemsLib.storage.UserNotFoundException;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metabagofgold.PlayerBalance;
+import metadev.digital.metabagofgold.PlayerBalances;
+import metadev.digital.metacustomitemslib.storage.DataStoreException;
+import metadev.digital.metacustomitemslib.storage.UserNotFoundException;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;

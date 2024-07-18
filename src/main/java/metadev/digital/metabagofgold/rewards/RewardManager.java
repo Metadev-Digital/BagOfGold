@@ -1,12 +1,12 @@
 package metadev.digital.metabagofgold.rewards;
 
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.BagOfGold.PlayerBalance;
-import one.lindegaard.CustomItemsLib.Core;
-import one.lindegaard.CustomItemsLib.Tools;
-import one.lindegaard.CustomItemsLib.mobs.MobType;
-import one.lindegaard.CustomItemsLib.rewards.CoreCustomItems;
-import one.lindegaard.CustomItemsLib.rewards.Reward;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metabagofgold.PlayerBalance;
+import metadev.digital.metacustomitemslib.Core;
+import metadev.digital.metacustomitemslib.Tools;
+import metadev.digital.metacustomitemslib.mobs.MobType;
+import metadev.digital.metacustomitemslib.rewards.CoreCustomItems;
+import metadev.digital.metacustomitemslib.rewards.Reward;
 import org.bukkit.*;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Item;

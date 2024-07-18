@@ -1,7 +1,7 @@
 package metadev.digital.metabagofgold.compatibility;
 
 import me.ebonjaeger.perworldinventory.event.InventoryLoadEvent;
-import one.lindegaard.BagOfGold.BagOfGold;
+import metadev.digital.metabagofgold.BagOfGold;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.event.EventHandler;

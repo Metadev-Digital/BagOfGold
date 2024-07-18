@@ -1,8 +1,8 @@
 package metadev.digital.metabagofgold.placeholder;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.CustomItemsLib.Tools;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metacustomitemslib.Tools;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.Listener;
 

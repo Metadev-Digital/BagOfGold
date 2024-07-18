@@ -1,10 +1,10 @@
 package metadev.digital.metabagofgold.commands;
 
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.BagOfGold.storage.DataStoreManager;
-import one.lindegaard.CustomItemsLib.Core;
-import one.lindegaard.CustomItemsLib.PlayerSettings;
-import one.lindegaard.CustomItemsLib.storage.DataStoreException;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metabagofgold.storage.DataStoreManager;
+import metadev.digital.metacustomitemslib.Core;
+import metadev.digital.metacustomitemslib.PlayerSettings;
+import metadev.digital.metacustomitemslib.storage.DataStoreException;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;

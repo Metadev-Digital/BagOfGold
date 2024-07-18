@@ -1,15 +1,15 @@
 package metadev.digital.metabagofgold.storage;
 
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.BagOfGold.PlayerBalance;
-import one.lindegaard.BagOfGold.PlayerBalances;
-import one.lindegaard.BagOfGold.storage.asynch.IDataStoreTask;
-import one.lindegaard.BagOfGold.storage.asynch.PlayerBalanceRetrieverTask;
-import one.lindegaard.BagOfGold.storage.asynch.StoreTask;
-import one.lindegaard.BagOfGold.storage.asynch.Top54BalanceRetrieverTask;
-import one.lindegaard.CustomItemsLib.Core;
-import one.lindegaard.CustomItemsLib.storage.DataStoreException;
-import one.lindegaard.CustomItemsLib.storage.IDataCallback;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metabagofgold.PlayerBalance;
+import metadev.digital.metabagofgold.PlayerBalances;
+import metadev.digital.metabagofgold.storage.asynch.IDataStoreTask;
+import metadev.digital.metabagofgold.storage.asynch.PlayerBalanceRetrieverTask;
+import metadev.digital.metabagofgold.storage.asynch.StoreTask;
+import metadev.digital.metabagofgold.storage.asynch.Top54BalanceRetrieverTask;
+import metadev.digital.metacustomitemslib.Core;
+import metadev.digital.metacustomitemslib.storage.DataStoreException;
+import metadev.digital.metacustomitemslib.storage.IDataCallback;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 

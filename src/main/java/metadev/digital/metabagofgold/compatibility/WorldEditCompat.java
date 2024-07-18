@@ -1,9 +1,9 @@
 package metadev.digital.metabagofgold.compatibility;
 
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.CustomItemsLib.compatibility.CompatPlugin;
-import one.lindegaard.CustomItemsLib.server.Servers;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
+import metadev.digital.metacustomitemslib.server.Servers;
 import org.bukkit.Bukkit;
 
 public class WorldEditCompat {

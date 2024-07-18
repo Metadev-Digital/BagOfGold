@@ -1,8 +1,8 @@
 package metadev.digital.metabagofgold.config;
 
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.CustomItemsLib.config.AutoConfig;
-import one.lindegaard.CustomItemsLib.config.ConfigField;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metacustomitemslib.config.AutoConfig;
+import metadev.digital.metacustomitemslib.config.ConfigField;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;

@@ -1,12 +1,12 @@
 package metadev.digital.metabagofgold.commands;
 
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.BagOfGold.bank.Bank;
-import one.lindegaard.BagOfGold.bank.Vault;
-import one.lindegaard.BagOfGold.bank.VaultType;
-import one.lindegaard.BagOfGold.compatibility.WorldGuardCompat;
-import one.lindegaard.CustomItemsLib.Core;
-import one.lindegaard.CustomItemsLib.Tools;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metabagofgold.bank.Bank;
+import metadev.digital.metabagofgold.bank.Vault;
+import metadev.digital.metabagofgold.bank.VaultType;
+import metadev.digital.metabagofgold.compatibility.WorldGuardCompat;
+import metadev.digital.metacustomitemslib.Core;
+import metadev.digital.metacustomitemslib.Tools;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;

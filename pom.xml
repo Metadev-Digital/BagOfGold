@@ -2,42 +2,34 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>BagOfGold</artifactId>
+	<artifactId>metabagofgold</artifactId>
 	<packaging>jar</packaging>
 	<!-- <version>4.5.6</version>  -->
 	<version>4.5.6-SNAPSHOT</version>
 	<!-- <version>4.2.1-SNAPSHOT-B${build.number}</version> -->
 	<name>BagOfGold</name>
-	<url>https://www.spigotmc.org/resources/bagofgold.49332/</url>
+	<url>https://github.com/Metadev-Digital/BagOfGold</url>
 	<description>BagOfGold is an Item based eConomy plugin, which can replace Essentials Economy, CraftConomy, Gringotts and similar plugins. Your money is in the Bag so be careful that you not loose the bag when you die. You can save some of your money the BagOfGold bank or in a protected chest. </description>
 
-	<parent>
-		<groupId>one.lindegaard</groupId>
-		<artifactId>Main</artifactId>
-		<version>0.1.5-SNAPSHOT</version>
-		<relativePath>../Main/pom.xml</relativePath>
-	</parent>
-
 	<properties>
-		<!--COPY!!! -->
-		<bossshop.version>1.9.8</bossshop.version>
+
 	</properties>
 
 	<scm>
 		<connection>scm:svn:https://github.com/Rocologo/BagOfGold.git</connection>
-		<developerConnection>scm:git:git://github.com/Rocologo</developerConnection>
-		<url>https://github.com/Rocologo/BagOfGold</url>
+		<developerConnection>scm:git:git:/github.com/Metadev-Digital/BagOfGold</developerConnection>
+		<url>https://github.com/Metadev-Digital/BagOfGold</url>
 	</scm>
 
 	<issueManagement>
-		<url>https://github.com/Rocologo/BagOfGold/issues</url>
+		<url>https://github.com/Metadev-Digital/BagOfGold/issues</url>
 	</issueManagement>
 
 	<!-- ********************************************************************** -->
 	<!-- ******************************** Build ******************************* -->
 	<!-- ********************************************************************** -->
 	<build>
-		<sourceDirectory>${basedir}/src</sourceDirectory>
+		<sourceDirectory>${basedir}/src/main/java</sourceDirectory>
 		<defaultGoal>clean install</defaultGoal>
 		<resources>
 			<resource>
@@ -81,7 +73,7 @@
 					<relocations>
 						<relocation>
 							<pattern>org.bstats</pattern>
-							<shadedPattern>one.lindegaard.BagOfGold</shadedPattern>
+							<shadedPattern>metadev.digital.metabagofgold</shadedPattern>
 						</relocation>
 					</relocations>
 				</configuration>
@@ -98,29 +90,28 @@
 		<dependency>
 			<groupId>org.spigotmc</groupId>
 			<artifactId>spigot-api</artifactId>
-			<version>${spigotmc_1_20_R2.version}</version>
+			<version>1.21-R0.1-SNAPSHOT</version>
 		</dependency>
 
-		<!-- Rocologo CustomItemsLib -->
+		<!-- MetaCustomItemsLib -->
 		<dependency>
-			<groupId>one.lindegaard</groupId>
-			<artifactId>CustomItemsLib</artifactId>
-			<version>${customitemslib.version}</version>
-			<scope>compile</scope>
+			<groupId>metadev.digital</groupId>
+			<artifactId>MetaCustomItemsLib</artifactId>
+			<version>2.0.6-SNAPSHOT</version>
 		</dependency>
 
 		<!-- PerWorldInventory -->
 		<dependency>
 			<groupId>me.ebonjaeger</groupId>
 			<artifactId>PerWorldInventory</artifactId>
-			<version>${PerWorldInventory.version}</version>
+			<version>2.3.2</version>
 		</dependency>
 
 		<!-- Vault / -->
 		<dependency>
-			<groupId>net.milkbowl.vault</groupId>
+			<groupId>com.github.MilkBowl</groupId>
 			<artifactId>Vault</artifactId>
-			<version>${vault.version}</version>
+			<version>1.7</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -128,14 +119,14 @@
 		<dependency>
 			<groupId>net.tnemc</groupId>
 			<artifactId>Reserve</artifactId>
-			<version>${reserve.version}</version>
+			<version>0.1.5.4</version>
 		</dependency>
 
 		<!-- Citizens -->
 		<dependency>
 			<groupId>net.citizensnpcs</groupId>
 			<artifactId>citizens-main</artifactId>
-			<version>${citizensapi.version}</version>
+			<version>2.0.30-SNAPSHOT</version>
 			<type>jar</type>
 			 <exclusions>
             <exclusion>
@@ -149,7 +140,7 @@
 		<dependency>
 			<groupId>com.sk89q.worldguard</groupId>
 			<artifactId>worldguard-bukkit</artifactId>
-			<version>${worldguard7.version}</version>
+			<version>7.0.7</version>
 			<scope>provided</scope>
 		</dependency>
 		
@@ -157,14 +148,14 @@
 		<dependency>
 			<groupId>com.sk89q.worldedit</groupId>
 			<artifactId>worldedit-bukkit</artifactId>
-			<version>${worldedit.version}</version>
+			<version>7.2.8</version>
 		</dependency>
 
 		<!-- BossBarAPI -->
 		<dependency>
 			<groupId>org.inventivetalent</groupId>
 			<artifactId>bossbarapi</artifactId>
-			<version>${bossbarapi.version}</version>
+			<version>2.4.3-SNAPSHOT</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>metrics-lite</artifactId>
@@ -177,69 +168,69 @@
 		<dependency>
 			<groupId>me.confuser</groupId>
 			<artifactId>BarAPI</artifactId>
-			<version>${barapi.version}</version>
+			<version>3.5</version>
 		</dependency>
 
 		<!-- TitleManager 		-->
 		<dependency>
 			<groupId>io.puharesource.mc</groupId>
 			<artifactId>TitleManager</artifactId>
-			<version>${titlemanager.version}</version>
+			<version>2.2.0</version>
 		</dependency>
 
 		<!-- TitleAPI, ActionBarAPI -->
 		<dependency>
 			<groupId>com.github.ConnorLinfoot</groupId>
 			<artifactId>TitleAPI</artifactId>
-			<version>${TitleAPI.version}</version>
+			<version>1.8.1</version>
 		</dependency>
 
 		<!-- CMI -->
 		<dependency>
 			<groupId>com.Zrips</groupId>
 			<artifactId>CMI</artifactId>
-			<version>${CMI.version}</version>
+			<version>9.0.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>net.Zrips</groupId>
 			<artifactId>CMILib</artifactId>
-			<version>${CMILib.version}</version>
+			<version>1.0.2.11</version>
 		</dependency>
 
 		<!-- Essentials -->
 		<dependency>
 			<groupId>net.essentialsx</groupId>
 			<artifactId>EssentialsX</artifactId>
-			<version>${EssentialsX.version}</version>
+			<version>2.19.4</version>
 		</dependency>
 
-		<!-- ActionBarAPI -->
-		<dependency>
-			<groupId>com.github.ConnorLinfoot</groupId>
-			<artifactId>ActionBarAPI</artifactId>
-			<version>${ActionBarAPI.version}</version>
-		</dependency>
+		<!-- ActionBarAPI Possibly deprecated-->
+<!--		<dependency>-->
+<!--			<groupId>com.github.ConnorLinfoot</groupId>-->
+<!--			<artifactId>ActionBarAPI</artifactId>-->
+<!--			<version>${ActionBarAPI.version}</version>-->
+<!--		</dependency>-->
 
 		<!-- ActionAnnouncer -->
-		<dependency>
-			<groupId>me.clip.actionannouncer</groupId>
-			<artifactId>ActionAnnouncer</artifactId>
-			<version>${ActionAnnouncer.version}</version>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>me.clip.actionannouncer</groupId>-->
+<!--			<artifactId>ActionAnnouncer</artifactId>-->
+<!--			<version>${ActionAnnouncer.version}</version>-->
+<!--		</dependency>-->
 
 		<!-- bStats.org -->
 		<dependency>
 			<groupId>org.bstats</groupId>
 			<artifactId>bstats-bukkit</artifactId>
-			<version>${bstats.version}</version>
+			<version>2.2.1</version>
 			<scope>compile</scope>
 		</dependency>
 
 		<!-- PlacholdeAPI -->
 		<dependency>
-			<groupId>me.clip.placeholderapi.PlaceholderAPIPlugin</groupId>
-			<artifactId>PlaceholderAPI</artifactId>
-			<version>${placeholderapi.version}</version>
+			<groupId>me.clip</groupId>
+			<artifactId>placeholderapi</artifactId>
+			<version>2.11.6</version>
 			<scope>provided</scope>
 		</dependency>
 
@@ -247,33 +238,45 @@
 		<dependency>
 			<groupId>org.black_ixx</groupId>
 			<artifactId>BossShop</artifactId>
-			<version>${bossshop.version}</version>
+			<version>1.9.8</version>
 		</dependency>
 
-		<!-- SpigetUpdate -->
-		<dependency>
-			<groupId>org.inventivetalent.spiget-update</groupId>
-			<artifactId>bukkit</artifactId>
-			<version>${spigetupdate.version}</version>
-			<scope>compile</scope>
-		</dependency>
+		<!-- SpigetUpdate Possibly deprecated -->
+<!--		<dependency>-->
+<!--			<groupId>org.inventivetalent.spiget-update</groupId>-->
+<!--			<artifactId>bukkit</artifactId>-->
+<!--			<version>${spigetupdate.version}</version>-->
+<!--			<scope>compile</scope>-->
+<!--		</dependency>-->
 
-		<!-- Shopkeepers-->
-		<dependency>
-			<groupId>com.nisovin.shopkeepers</groupId>
-			<artifactId>ShopkeepersAPI</artifactId>
-			<!-- Replace this with the latest Shopkeepers version -->
-			<version>2.16.1</version>
-			<scope>provided</scope>
-		</dependency>
+		<!-- Shopkeepers Currently no 1.21 support-->
+<!--		<dependency>-->
+<!--			<groupId>com.nisovin.shopkeepers</groupId>-->
+<!--			<artifactId>ShopkeepersAPI</artifactId>-->
+<!--			&lt;!&ndash; Replace this with the latest Shopkeepers version &ndash;&gt;-->
+<!--			<version>2.16.1</version>-->
+<!--			<scope>provided</scope>-->
+<!--		</dependency>-->
 
 	</dependencies>
 
-	<!-- Add imported jar files to mobhunting project-->
 	<repositories>
+		<!-- Spigot -->
 		<repository>
-			<id>mobhunting-local-repo</id>
-			<url>file://${project.basedir}/lib</url>
+			<id>spigot-repo</id>
+			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+		</repository>
+
+		<!-- Add imported jar files to main project-->
+<!--		<repository>-->
+<!--			<id>local-maven-repo</id>-->
+<!--			<url>file:///${project.basedir}/lib</url>-->
+<!--		</repository>-->
+
+		<!-- Jitpack (Vault, TitleAPI, ActionBarAPI, CustomItemsLib) -->
+		<repository>
+			<id>vault-repo</id>
+			<url>https://jitpack.io</url>
 		</repository>
 
 		<!-- Shopkeepers -->
@@ -282,6 +285,45 @@
 			<url>https://nexus.lichtspiele.org/repository/releases/</url>
 		</repository>
 
+		<!-- Placeholder API -->
+		<repository>
+			<id>placeholderapi</id>
+			<url>https://repo.extendedclip.com/content/repositories/</url>
+		</repository>
+
+		<!-- CodeMC - Open Source Minecraft projects repository -->
+		<!-- Used by bStats -->
+		<repository>
+			<id>CodeMC</id>
+			<url>https://repo.codemc.org/repository/maven-public</url>
+		</repository>
+		<repository>
+			<id>bstats1.2</id>
+			<url>https://mvnrepository.com/artifact/org.bstats/bstats-bukkit</url>
+		</repository>
+
+		<!-- EssentialsX repo-->
+		<repository>
+			<id>essentials-releases</id>
+			<url>https://repo.essentialsx.net/releases/</url>
+		</repository>
+		<repository>
+			<id>paper-repo</id>
+			<url>https://papermc.io/repo/repository/maven-public/</url>
+		</repository>
+
+		<!-- citizens repository -->
+		<repository>
+			<id>citizens-repo</id>
+			<name>Citizens Repository</name>
+			<url>https://maven.citizensnpcs.co/repo</url>
+		</repository>
+
+		<!-- Inventive Repo / SpigetUpdater / BossBarAPI -->
+		<repository>
+			<id>inventive-repo</id>
+			<url>https://repo.inventivetalent.org/repository/public/</url>
+		</repository>
 	</repositories>
 
 </project>

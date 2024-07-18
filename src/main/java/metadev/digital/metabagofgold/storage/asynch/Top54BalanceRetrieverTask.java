@@ -1,8 +1,8 @@
 package metadev.digital.metabagofgold.storage.asynch;
 
-import one.lindegaard.BagOfGold.PlayerBalance;
-import one.lindegaard.BagOfGold.storage.IDataStore;
-import one.lindegaard.CustomItemsLib.storage.DataStoreException;
+import metadev.digital.metabagofgold.PlayerBalance;
+import metadev.digital.metabagofgold.storage.IDataStore;
+import metadev.digital.metacustomitemslib.storage.DataStoreException;
 
 import java.util.HashSet;
 import java.util.Iterator;

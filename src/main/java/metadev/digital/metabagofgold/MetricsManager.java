@@ -1,9 +1,9 @@
 package metadev.digital.metabagofgold;
 
-import one.lindegaard.BagOfGold.compatibility.*;
-import one.lindegaard.CustomItemsLib.Core;
-import one.lindegaard.CustomItemsLib.HttpTools;
-import one.lindegaard.CustomItemsLib.HttpTools.httpCallback;
+import metadev.digital.metabagofgold.compatibility.*;
+import metadev.digital.metacustomitemslib.Core;
+import metadev.digital.metacustomitemslib.HttpTools;
+import metadev.digital.metacustomitemslib.HttpTools.httpCallback;
 import org.bstats.bukkit.Metrics;
 import org.bstats.charts.AdvancedPie;
 import org.bstats.charts.SimplePie;

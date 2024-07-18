@@ -1,11 +1,11 @@
 package metadev.digital.metabagofgold.compatibility;
 
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.CustomItemsLib.Core;
-import one.lindegaard.CustomItemsLib.compatibility.BagOfGoldCompat;
-import one.lindegaard.CustomItemsLib.compatibility.CompatPlugin;
-import one.lindegaard.CustomItemsLib.rewards.Reward;
-import one.lindegaard.CustomItemsLib.server.Servers;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metacustomitemslib.Core;
+import metadev.digital.metacustomitemslib.compatibility.BagOfGoldCompat;
+import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
+import metadev.digital.metacustomitemslib.rewards.Reward;
+import metadev.digital.metacustomitemslib.server.Servers;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

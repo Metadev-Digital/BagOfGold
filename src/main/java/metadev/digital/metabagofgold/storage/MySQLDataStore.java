@@ -1,12 +1,12 @@
 package metadev.digital.metabagofgold.storage;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.BagOfGold.PlayerBalance;
-import one.lindegaard.CustomItemsLib.Core;
-import one.lindegaard.CustomItemsLib.PlayerSettings;
-import one.lindegaard.CustomItemsLib.Tools;
-import one.lindegaard.CustomItemsLib.storage.DataStoreException;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metabagofgold.PlayerBalance;
+import metadev.digital.metacustomitemslib.Core;
+import metadev.digital.metacustomitemslib.PlayerSettings;
+import metadev.digital.metacustomitemslib.Tools;
+import metadev.digital.metacustomitemslib.storage.DataStoreException;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;

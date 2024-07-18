@@ -1,13 +1,13 @@
 package metadev.digital.metabagofgold;
 
-import one.lindegaard.BagOfGold.compatibility.EssentialsCompat;
-import one.lindegaard.CustomItemsLib.Core;
-import one.lindegaard.CustomItemsLib.PlayerSettings;
-import one.lindegaard.CustomItemsLib.Tools;
-import one.lindegaard.CustomItemsLib.rewards.CoreCustomItems;
-import one.lindegaard.CustomItemsLib.storage.DataStoreException;
-import one.lindegaard.CustomItemsLib.storage.IDataCallback;
-import one.lindegaard.CustomItemsLib.storage.UserNotFoundException;
+import metadev.digital.metabagofgold.compatibility.EssentialsCompat;
+import metadev.digital.metacustomitemslib.Core;
+import metadev.digital.metacustomitemslib.PlayerSettings;
+import metadev.digital.metacustomitemslib.Tools;
+import metadev.digital.metacustomitemslib.rewards.CoreCustomItems;
+import metadev.digital.metacustomitemslib.storage.DataStoreException;
+import metadev.digital.metacustomitemslib.storage.IDataCallback;
+import metadev.digital.metacustomitemslib.storage.UserNotFoundException;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;

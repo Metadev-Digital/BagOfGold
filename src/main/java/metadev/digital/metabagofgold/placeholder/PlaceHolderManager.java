@@ -1,6 +1,6 @@
 package metadev.digital.metabagofgold.placeholder;
 
-import one.lindegaard.BagOfGold.BagOfGold;
+import metadev.digital.metabagofgold.BagOfGold;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

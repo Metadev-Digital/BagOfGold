@@ -1,11 +1,11 @@
 package metadev.digital.metabagofgold.compatibility;
 
 import me.clip.placeholderapi.PlaceholderAPI;
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.BagOfGold.placeholder.BagOfGoldPlaceholderExpansion;
-import one.lindegaard.BagOfGold.placeholder.PlaceHolderData;
-import one.lindegaard.BagOfGold.placeholder.PlaceHolderManager;
-import one.lindegaard.CustomItemsLib.compatibility.CompatPlugin;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metabagofgold.placeholder.BagOfGoldPlaceholderExpansion;
+import metadev.digital.metabagofgold.placeholder.PlaceHolderData;
+import metadev.digital.metabagofgold.placeholder.PlaceHolderManager;
+import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;

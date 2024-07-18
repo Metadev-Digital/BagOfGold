@@ -1,8 +1,8 @@
 package metadev.digital.metabagofgold.commands;
 
 import net.milkbowl.vault.economy.Economy;
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.CustomItemsLib.Core;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metacustomitemslib.Core;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -106,7 +106,7 @@ public class ConvertCommand implements ICommand {
 					balances.put(offlinePlayer.getUniqueId(), from_economy.getBalance(offlinePlayer));
 				}
 				Bukkit.getServer().getPluginManager().enablePlugin(bPlugin);
-				//BagOfGold.hookVaultEconomy(Economy_BagOfGold.class, ServicePriority.Normal, "one.lindegaard.BagOfGold.BagOfGoldEconomy");
+				//BagOfGold.hookVaultEconomy(Economy_BagOfGold.class, ServicePriority.Normal, "metadev.digital.metabagofgold.BagOfGoldEconomy");
 			} else {
 				for (OfflinePlayer offlinePlayer : Bukkit.getOfflinePlayers()) {
 					plugin.getMessages().debug("balance=%s", from_economy.getBalance(offlinePlayer));

@@ -2,8 +2,8 @@ package metadev.digital.metabagofgold.compatibility;
 
 import com.earth2me.essentials.Essentials;
 import com.earth2me.essentials.User;
-import one.lindegaard.BagOfGold.BagOfGold;
-import one.lindegaard.CustomItemsLib.compatibility.CompatPlugin;
+import metadev.digital.metabagofgold.BagOfGold;
+import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.InvalidConfigurationException;
