@@ -17,7 +17,7 @@
 
 	<scm>
 		<connection>scm:svn:https://github.com/Rocologo/BagOfGold.git</connection>
-		<developerConnection>scm:git:git:/github.com/Metadev-Digital/BagOfGold</developerConnection>
+		<developerConnection>scm:git:git://github.com/Metadev-Digital/BagOfGold</developerConnection>
 		<url>https://github.com/Metadev-Digital/BagOfGold</url>
 	</scm>
 
@@ -51,7 +51,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
-				<version>${mavenShadePlugin.version}</version>
+				<version>3.3.0</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
