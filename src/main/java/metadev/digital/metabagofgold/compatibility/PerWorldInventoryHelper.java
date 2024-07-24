@@ -1,4 +1,4 @@
-package metadev.digital.metabagofgold.compatibility;
+/**package metadev.digital.metabagofgold.compatibility;
 
 import me.ebonjaeger.perworldinventory.event.InventoryLoadEvent;
 import metadev.digital.metabagofgold.BagOfGold;
@@ -25,4 +25,4 @@ public class PerWorldInventoryHelper {
 		}, plugin);
 	}
 
-}
+}*/

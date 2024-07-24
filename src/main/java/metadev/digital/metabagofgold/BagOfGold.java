@@ -13,7 +13,7 @@ import metadev.digital.metabagofgold.storage.DataStoreManager;
 import metadev.digital.metabagofgold.storage.IDataStore;
 import metadev.digital.metabagofgold.storage.MySQLDataStore;
 import metadev.digital.metabagofgold.storage.SQLiteDataStore;
-import metadev.digital.metabagofgold.update.SpigetUpdater;
+//import metadev.digital.metabagofgold.update.SpigetUpdater;
 import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
 import metadev.digital.metacustomitemslib.server.Servers;
 import metadev.digital.metacustomitemslib.storage.DataStoreException;
@@ -39,7 +39,7 @@ public class BagOfGold extends JavaPlugin {
 	private RewardManager mRewardManager;
 	private CompatibilityManager mCompatibilityManager;
 	private BankManager mBankManager;
-	private SpigetUpdater mSpigetUpdater;
+	//private SpigetUpdater mSpigetUpdater;
 	private PlayerBalanceManager mPlayerBalanceManager;
 	private GringottsItems mGringottsItems;
 	private BagOfGoldItems mBagOfGoldItems;
@@ -96,8 +96,10 @@ public class BagOfGold extends JavaPlugin {
 			}
 		}
 
+		/**
 		mSpigetUpdater = new SpigetUpdater(this);
 		mSpigetUpdater.setCurrentJarFile(this.getFile().getName());
+		 */
 
 		// Register commands
 		mCommandDispatcher = new CommandDispatcher(this, "bagofgold",
@@ -115,8 +117,8 @@ public class BagOfGold extends JavaPlugin {
 		mCommandDispatcher.registerCommand(new MuteCommand(this));
 		mCommandDispatcher.registerCommand(new DatabaseCommand(this));
 
-		// Check for new BagOfGold updates
-		mSpigetUpdater.hourlyUpdateCheck(getServer().getConsoleSender(), mConfig.updateCheck, false);
+		/* Check for new BagOfGold updates
+		mSpigetUpdater.hourlyUpdateCheck(getServer().getConsoleSender(), mConfig.updateCheck, false);*/
 
 		if (mConfig.databaseType.equalsIgnoreCase("mysql"))
 			mStore = new MySQLDataStore(this);
@@ -146,7 +148,7 @@ public class BagOfGold extends JavaPlugin {
 
 		mCompatibilityManager = new CompatibilityManager(this);
 
-		mCompatibilityManager.registerPlugin(PerWorldInventoryCompat.class, CompatPlugin.PerWorldInventory);
+		//TODO: PerWorldInventory is possibly deprecated mCompatibilityManager.registerPlugin(PerWorldInventoryCompat.class, CompatPlugin.PerWorldInventory);
 		if (!Servers.isSpigotServer() && !Servers.isPaperServer() && !Servers.isPurpurServer())
 			Bukkit.getConsoleSender().sendMessage(PREFIX_WARNING + "This is server (" + Bukkit.getServer().getName()
 					+ ") is not tested with the BagOfGold-Citizens integration");
@@ -171,8 +173,8 @@ public class BagOfGold extends JavaPlugin {
 		// start the Economy Service Provider using Vault or Reserve
 		mEconomyManager = new EconomyManager(this);
 
-		if (PerWorldInventoryCompat.isSupported() && PerWorldInventoryCompat.pwi_sync_economy())
-			PerWorldInventoryCompat.pwi_sync_economy_warning();
+		/** //TODO: PerWorldInventory is possibly deprecated if (PerWorldInventoryCompat.isSupported() && PerWorldInventoryCompat.pwi_sync_economy())
+			PerWorldInventoryCompat.pwi_sync_economy_warning();*/
 
 		mGringottsItems = new GringottsItems(this);
 		mBagOfGoldItems = new BagOfGoldItems(this);
@@ -281,9 +283,9 @@ public class BagOfGold extends JavaPlugin {
 		return mCompatibilityManager;
 	}
 
-	public SpigetUpdater getSpigetUpdater() {
+	/**public SpigetUpdater getSpigetUpdater() {
 		return mSpigetUpdater;
-	}
+	}*/
 
 	public PlayerBalanceManager getPlayerBalanceManager() {
 		return mPlayerBalanceManager;

@@ -1,7 +1,7 @@
 package metadev.digital.metabagofgold.commands;
 
 import metadev.digital.metabagofgold.BagOfGold;
-import metadev.digital.metacustomitemslib.update.UpdateStatus;
+//import metadev.digital.metacustomitemslib.update.UpdateStatus;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
@@ -53,7 +53,7 @@ public class VersionCommand implements ICommand {
 
 	@Override
 	public boolean onCommand(CommandSender sender, String label, String[] args) {
-		plugin.getMessages().senderSendMessage(sender,
+		/**plugin.getMessages().senderSendMessage(sender,
 				ChatColor.GREEN + plugin.getMessages().getString("bagofgold.commands.version.currentversion",
 						"currentversion", plugin.getDescription().getVersion()));
 		if (plugin.getSpigetUpdater().getUpdateAvailable() == UpdateStatus.AVAILABLE)
@@ -61,7 +61,7 @@ public class VersionCommand implements ICommand {
 					ChatColor.GREEN + plugin.getMessages().getString("bagofgold.commands.version.newversion",
 							"newversion", plugin.getSpigetUpdater().getNewDownloadVersion()));
 		else if (sender.hasPermission("bagofgold.update"))
-			plugin.getSpigetUpdater().checkForUpdate(sender, true, false);
+			plugin.getSpigetUpdater().checkForUpdate(sender, true, false);*/
 		return true;
 	}
 

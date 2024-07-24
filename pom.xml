@@ -2,17 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>metabagofgold</artifactId>
+	<groupId>metadev.digital</groupId>
+	<artifactId>MetaBagOfGold</artifactId>
 	<packaging>jar</packaging>
-	<!-- <version>4.5.6</version>  -->
-	<version>4.5.6-SNAPSHOT</version>
-	<!-- <version>4.2.1-SNAPSHOT-B${build.number}</version> -->
+	<version>4.5.7-SNAPSHOT</version>
 	<name>BagOfGold</name>
 	<url>https://github.com/Metadev-Digital/BagOfGold</url>
 	<description>BagOfGold is an Item based eConomy plugin, which can replace Essentials Economy, CraftConomy, Gringotts and similar plugins. Your money is in the Bag so be careful that you not loose the bag when you die. You can save some of your money the BagOfGold bank or in a protected chest. </description>
 
 	<properties>
-
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<scm>
@@ -47,11 +48,19 @@
 			</resource>
 		</resources>
 		<directory>${basedir}/target</directory>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-shade-plugin</artifactId>
+					<version>3.6.0</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.3.0</version>
 				<executions>
 					<execution>
 						<phase>package</phase>
@@ -66,8 +75,6 @@
 					<artifactSet>
 						<includes>
 							<include>org.bstats:*</include>
-							<include>org.inventivetalent.spiget-update:bukkit**</include>
-							<!--  <include>one.lindegaard:Core:*</include> -->
 						</includes>
 					</artifactSet>
 					<relocations>
@@ -97,20 +104,20 @@
 		<dependency>
 			<groupId>metadev.digital</groupId>
 			<artifactId>MetaCustomItemsLib</artifactId>
-			<version>2.0.6-SNAPSHOT</version>
+			<version>2.1.1-SNAPSHOT</version>
 		</dependency>
 
-		<!-- PerWorldInventory -->
+		<!-- PerWorldInventory Possibly Deprecated
 		<dependency>
 			<groupId>me.ebonjaeger</groupId>
 			<artifactId>PerWorldInventory</artifactId>
 			<version>2.3.2</version>
-		</dependency>
+		</dependency>-->
 
 		<!-- Vault / -->
 		<dependency>
 			<groupId>com.github.MilkBowl</groupId>
-			<artifactId>Vault</artifactId>
+			<artifactId>VaultAPI</artifactId>
 			<version>1.7</version>
 			<scope>provided</scope>
 		</dependency>
@@ -171,7 +178,7 @@
 			<version>3.5</version>
 		</dependency>
 
-		<!-- TitleManager 		-->
+		<!-- TitleManager -->
 		<dependency>
 			<groupId>io.puharesource.mc</groupId>
 			<artifactId>TitleManager</artifactId>
@@ -222,8 +229,7 @@
 		<dependency>
 			<groupId>org.bstats</groupId>
 			<artifactId>bstats-bukkit</artifactId>
-			<version>2.2.1</version>
-			<scope>compile</scope>
+			<version>3.0.2</version>
 		</dependency>
 
 		<!-- PlacholdeAPI -->
@@ -234,12 +240,12 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- BossShop -->
+		<!-- BossShop  Deprecated TODO: MOVE TO https://www.spigotmc.org/resources/genesis-custom-gui-and-shop-creator-by-magemonkey-studio-formerly-bossshoppro.104824/
 		<dependency>
 			<groupId>org.black_ixx</groupId>
 			<artifactId>BossShop</artifactId>
 			<version>1.9.8</version>
-		</dependency>
+		</dependency>-->
 
 		<!-- SpigetUpdate Possibly deprecated -->
 <!--		<dependency>-->
@@ -267,12 +273,6 @@
 			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
 		</repository>
 
-		<!-- Add imported jar files to main project-->
-<!--		<repository>-->
-<!--			<id>local-maven-repo</id>-->
-<!--			<url>file:///${project.basedir}/lib</url>-->
-<!--		</repository>-->
-
 		<!-- Jitpack (Vault, TitleAPI, ActionBarAPI, CustomItemsLib) -->
 		<repository>
 			<id>vault-repo</id>
@@ -297,10 +297,6 @@
 			<id>CodeMC</id>
 			<url>https://repo.codemc.org/repository/maven-public</url>
 		</repository>
-		<repository>
-			<id>bstats1.2</id>
-			<url>https://mvnrepository.com/artifact/org.bstats/bstats-bukkit</url>
-		</repository>
 
 		<!-- EssentialsX repo-->
 		<repository>
@@ -323,6 +319,17 @@
 		<repository>
 			<id>inventive-repo</id>
 			<url>https://repo.inventivetalent.org/repository/public/</url>
+		</repository>
+
+		<!-- sk89q WorldGuard WorldEdit repositories -->
+		<repository>
+			<id>sk89q-repo</id>
+			<url>https://maven.enginehub.org/repo/</url>
+		</repository>
+
+		<repository>
+			<id>puha-repo</id>
+			<url>https://repo.puha.io/repo/</url>
 		</repository>
 	</repositories>
 

@@ -4,7 +4,7 @@ import com.sk89q.worldedit.IncompleteRegionException;
 import com.sk89q.worldedit.math.BlockVector3;
 import com.sk89q.worldedit.regions.CuboidRegion;
 import com.sk89q.worldedit.regions.Region;
-import metadev.digital.MetaMobHunting.MobHunting;
+import metadev.digital.metabagofgold.BagOfGold;
 import org.bukkit.entity.Player;
 
 public class WorldEditHelper {
@@ -24,11 +24,11 @@ public class WorldEditHelper {
 
 		if (sel == null)
 			throw new IllegalArgumentException(
-					MobHunting.getInstance().getMessages().getString("mobhunting.commands.select.no-select"));
+					BagOfGold.getInstance().getMessages().getString("bagofgold.commands.select.no-select"));
 
 		if (!(sel instanceof CuboidRegion))
 			throw new IllegalArgumentException(
-					MobHunting.getInstance().getMessages().getString("mobhunting.commands.select.select-type"));
+					BagOfGold.getInstance().getMessages().getString("bagofgold.commands.select.select-type"));
 
 		return sel.getMinimumPoint();
 	}
@@ -48,11 +48,11 @@ public class WorldEditHelper {
 
 		if (sel == null)
 			throw new IllegalArgumentException(
-					MobHunting.getInstance().getMessages().getString("mobhunting.commands.select.no-select"));
+					BagOfGold.getInstance().getMessages().getString("bagofgold.commands.select.no-select"));
 
 		if (!(sel instanceof CuboidRegion))
 			throw new IllegalArgumentException(
-					MobHunting.getInstance().getMessages().getString("mobhunting.commands.select.select-type"));
+					BagOfGold.getInstance().getMessages().getString("bagofgold.commands.select.select-type"));
 
 		return sel.getMaximumPoint();
 	}

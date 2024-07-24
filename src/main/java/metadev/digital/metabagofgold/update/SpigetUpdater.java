@@ -1,4 +1,4 @@
-package metadev.digital.metabagofgold.update;
+/**package metadev.digital.metabagofgold.update;
 
 import metadev.digital.metabagofgold.BagOfGold;
 import metadev.digital.metacustomitemslib.update.UpdateStatus;
@@ -190,13 +190,14 @@ public class SpigetUpdater {
 		});
 
 	}
+*/
 
 	/**
 	 * Check if "newVersion" is newer than plugin's current version
 	 * 
 	 * @param newVersion
 	 * @return
-	 */
+
 	public UpdateStatus isUpdateNewerVersion(String newVersion) {
 		// Version format on Spigot.org & Spiget.org: "n.n.n"
 		// Version format in jar file: "n.n.n" | "n.n.n-SNAPSHOT-Bn"
@@ -242,3 +243,4 @@ public class SpigetUpdater {
 			return UpdateStatus.NOT_AVAILABLE;
 	}
 }
+*/

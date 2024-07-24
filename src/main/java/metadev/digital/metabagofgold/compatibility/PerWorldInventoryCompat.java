@@ -1,4 +1,4 @@
-package metadev.digital.metabagofgold.compatibility;
+/**package metadev.digital.metabagofgold.compatibility;
 
 import metadev.digital.metabagofgold.BagOfGold;
 import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
@@ -129,3 +129,4 @@ public class PerWorldInventoryCompat {
 	}
 
 }
+*/

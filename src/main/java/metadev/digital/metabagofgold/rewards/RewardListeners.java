@@ -2,7 +2,7 @@ package metadev.digital.metabagofgold.rewards;
 
 import metadev.digital.metabagofgold.BagOfGold;
 import metadev.digital.metabagofgold.PlayerBalance;
-import metadev.digital.metabagofgold.compatibility.PerWorldInventoryCompat;
+//TODO: PerWorldInventory possibly deprecated import metadev.digital.metabagofgold.compatibility.PerWorldInventoryCompat;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
@@ -43,8 +43,8 @@ public class RewardListeners implements Listener {
 
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onGameModeChange(PlayerGameModeChangeEvent event) {
-
-		if (event.isCancelled() || PerWorldInventoryCompat.isSupported())
+		//TODO: PerWorldInventory is possibly deprecated event.isCancelled() || PerWorldInventoryCompat.isSupported())
+		if (event.isCancelled())
 			return;
 
 		Bukkit.getScheduler().runTaskLater(plugin, new Runnable() {
@@ -74,8 +74,8 @@ public class RewardListeners implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onWorldChange(PlayerChangedWorldEvent event) {
 
-		if (PerWorldInventoryCompat.isSupported())
-			return;
+		/** //TODO: PerWorldInventory is possibly deprecated if (PerWorldInventoryCompat.isSupported())
+			return;*/
 
 		Player player = event.getPlayer();
 		if (player.getGameMode() == GameMode.SURVIVAL) {

@@ -321,9 +321,9 @@ public class Messages {
 			return;
 
 		final String final_message = PlaceholderAPICompat.setPlaceholders(player, message);
-
-		if (TitleManagerCompat.isSupported() || ActionbarCompat.isSupported() || ActionAnnouncerCompat.isSupported()
-				|| ActionBarAPICompat.isSupported() || CMICompat.isSupported()) {
+		// TODO: TITLE MANAGER POSSIBLY DEPREACTED TitleManagerCompat.isSupported() || ActionbarCompat.isSupported() || ActionAnnouncerCompat.isSupported()
+		//				|| ActionBarAPICompat.isSupported() || CMICompat.isSupported()
+		if (ActionbarCompat.isSupported() || ActionBarAPICompat.isSupported() || CMICompat.isSupported()) {
 			long last = 0L;
 			long time_between_messages = 80L;
 			long delay = 1L, now = System.currentTimeMillis();
@@ -361,13 +361,13 @@ public class Messages {
 			return;
 
 		message = Strings.convertColors(PlaceholderAPICompat.setPlaceholders(player, message));
-		if (TitleManagerCompat.isSupported()) {
+		/** TODO: TITLE MANAGER POSSIBLY DEPRECATED if (TitleManagerCompat.isSupported()) {
 			TitleManagerCompat.setActionBar(player, message);
-		} else if (ActionbarCompat.isSupported()) {
+		} else */ if (ActionbarCompat.isSupported()) {
 			ActionbarCompat.setMessage(player, message);
-		} else if (ActionAnnouncerCompat.isSupported()) {
+		} /** TODO: ACTION ANNOUNCER POSSIBLY DEPRECATE else if (ActionAnnouncerCompat.isSupported()) {
 			ActionAnnouncerCompat.setMessage(player, message);
-		} else if (ActionBarAPICompat.isSupported()) {
+		}*/ else if (ActionBarAPICompat.isSupported()) {
 			ActionBarAPICompat.setMessage(player, message);
 		} else if (CMICompat.isSupported()) {
 			CMICompat.sendActionBarMessage(player, message);
