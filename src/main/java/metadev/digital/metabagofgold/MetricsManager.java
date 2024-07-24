@@ -57,7 +57,7 @@ public class MetricsManager {
 
 	public void startBStatsMetrics() {
 		// https://bstats.org/what-is-my-plugin-id
-		bStatsMetrics = new Metrics(plugin, 1783);
+		bStatsMetrics = new Metrics(plugin, 22713);
 		bStatsMetrics.addCustomChart(
 				new SimplePie("database_used_for_bagofgold", () -> plugin.getConfigManager().databaseType));
 		bStatsMetrics
@@ -67,8 +67,8 @@ public class MetricsManager {
 						Map<String, Integer> valueMap = new HashMap<>();
 						valueMap.put("Citizens", CitizensCompat.isSupported() ? 1 : 0);
 						valueMap.put("Essentials", EssentialsCompat.isSupported() ? 1 : 0);
-						valueMap.put("PerWorldInventory", PerWorldInventoryCompat.isSupported() ? 1 : 0);
-						valueMap.put("ProtocolLib", ProtocolLibCompat.isSupported() ? 1 : 0);
+						//TODO: PerWorldInventory is possibly deprecated valueMap.put("PerWorldInventory", PerWorldInventoryCompat.isSupported() ? 1 : 0);
+						//TODO: ProtocolLib is possibly deprecated valueMap.put("ProtocolLib", ProtocolLibCompat.isSupported() ? 1 : 0);
 						return valueMap;
 					}
 
@@ -78,8 +78,8 @@ public class MetricsManager {
 		bStatsMetrics.addCustomChart(new SimplePie("item_type", () -> Core.getConfigManager().rewardItemtype));
 		
 		bStatsMetrics.addCustomChart(new SimplePie("economy_base", () -> plugin.getEconomyManager().getEconomyAPI()));
-	
-		bStatsMetrics.addCustomChart(new AdvancedPie("titlemanagers", new Callable<Map<String, Integer>>() {
+
+		/**bStatsMetrics.addCustomChart(new AdvancedPie("titlemanagers", new Callable<Map<String, Integer>>() {
 			@Override
 			public Map<String, Integer> call() throws Exception {
 				Map<String, Integer> valueMap = new HashMap<>();
@@ -97,7 +97,7 @@ public class MetricsManager {
 				valueMap.put("PlaceholderAPI", PlaceholderAPICompat.isSupported() ? 1 : 0);
 				return valueMap;
 			}
-		}));
+		}));*/
 
 	}
 }
