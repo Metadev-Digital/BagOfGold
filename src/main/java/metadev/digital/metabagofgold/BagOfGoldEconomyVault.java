@@ -145,6 +145,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             instead.
 	 */
 	@Override
+	@Deprecated
 	public double getBalance(String playername) {
 		if (isEnabled())
 			return getBalance(Bukkit.getOfflinePlayer(playername));
@@ -171,6 +172,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             instead.
 	 */
 	@Override
+	@Deprecated
 	public double getBalance(String playername, String world) {
 		if (isEnabled())
 			return getBalance(playername);
@@ -212,6 +214,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             {{@link #createPlayerAccount(OfflinePlayer)} instead.
 	 */
 	@Override
+	@Deprecated
 	public boolean createPlayerAccount(String playername) {
 		if (isEnabled())
 			return createPlayerAccount(Bukkit.getServer().getOfflinePlayer(playername));
@@ -239,6 +242,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             {{@link #createPlayerAccount(OfflinePlayer, String)} instead.
 	 */
 	@Override
+	@Deprecated
 	public boolean createPlayerAccount(String playername, String world) {
 		if (isEnabled())
 			return createPlayerAccount(Bukkit.getServer().getOfflinePlayer(playername), world);
@@ -296,6 +300,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             {@link #depositPlayer(OfflinePlayer, double)} instead.
 	 */
 	@Override
+	@Deprecated
 	public EconomyResponse depositPlayer(String playername, double amount) {
 		if (isEnabled())
 			return depositPlayer(Bukkit.getOfflinePlayer(playername), amount);
@@ -327,6 +332,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             {@link #depositPlayer(OfflinePlayer, String, double)} instead.
 	 */
 	@Override
+	@Deprecated
 	public EconomyResponse depositPlayer(String playername, String world, double amount) {
 		if (isEnabled())
 			return depositPlayer(playername, amount);
@@ -357,6 +363,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             instead.
 	 */
 	@Override
+	@Deprecated
 	public boolean has(String playername, double amount) {
 		if (isEnabled())
 			return has(Bukkit.getOfflinePlayer(playername), amount);
@@ -384,6 +391,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             {@link #has(OfflinePlayer, String, double)} instead.
 	 */
 	@Override
+	@Deprecated
 	public boolean has(String playername, String world, double amount) {
 		if (isEnabled())
 			return has(playername, amount);
@@ -415,6 +423,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             instead.
 	 */
 	@Override
+	@Deprecated
 	public boolean hasAccount(String playername) {
 		if (isEnabled())
 			return true;
@@ -490,6 +499,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             {@link #withdrawPlayer(OfflinePlayer, double)} instead.
 	 */
 	@Override
+	@Deprecated
 	public EconomyResponse withdrawPlayer(String playername, double amount) {
 		if (isEnabled())
 			return withdrawPlayer(Bukkit.getOfflinePlayer(playername), amount);
@@ -502,6 +512,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             {@link #withdrawPlayer(OfflinePlayer, String, double)} instead.
 	 */
 	@Override
+	@Deprecated
 	public EconomyResponse withdrawPlayer(String playername, String world, double amount) {
 		if (isEnabled())
 			return withdrawPlayer(playername, amount);
@@ -545,6 +556,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             {{@link #isBankMember(String, OfflinePlayer)} instead.
 	 */
 	@Override
+	@Deprecated
 	public EconomyResponse isBankMember(String account, String playername) {
 		if (isEnabled())
 			return isBankMember(account, Bukkit.getOfflinePlayer(playername));
@@ -576,6 +588,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             {{@link #isBankOwner(String, OfflinePlayer)} instead.
 	 */
 	@Override
+	@Deprecated
 	public EconomyResponse isBankOwner(String account, String playername) {
 		if (isEnabled())
 			return isBankOwner(account, Bukkit.getOfflinePlayer(playername));
@@ -683,6 +696,7 @@ public class BagOfGoldEconomyVault implements Economy, Listener {
 	 *             {{@link #createBank(String, OfflinePlayer)} instead.
 	 */
 	@Override
+	@Deprecated
 	public EconomyResponse createBank(String account, String playername) {
 		if (isEnabled())
 			return new EconomyResponse(0, 0, ResponseType.SUCCESS, null);
