@@ -105,6 +105,12 @@
 			<groupId>metadev.digital</groupId>
 			<artifactId>MetaCustomItemsLib</artifactId>
 			<version>2.1.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<groupId>metadev.digital</groupId>
+					<artifactId>MetaBagOfGold</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<!-- PerWorldInventory Possibly Deprecated
