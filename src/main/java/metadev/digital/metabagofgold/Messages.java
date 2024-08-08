@@ -17,6 +17,7 @@ import java.util.*;
 import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Messages {
 
@@ -60,6 +61,11 @@ public class Messages {
 			if (dest == null)
 				return false;
 
+			if(dest.get("archived-lang-version") == null || compareVersion(source.get("archived-lang-version"), dest.get("archived-lang-version"))){
+				Bukkit.getConsoleSender().sendMessage(BagOfGold.PREFIX + "Newer version of language file " + onDisk.getName() + " available from JAR, overwriting file.");
+				return false;
+			}
+
 			HashMap<String, String> newEntries = new HashMap<String, String>();
 			for (String key : source.keySet()) {
 				if (!dest.containsKey(key)) {
@@ -83,6 +89,36 @@ public class Messages {
 			e.printStackTrace();
 			return false;
 		}
+	}
+
+	/**
+	 * Compare two semantic versions to see which is newer.
+	 * @param sourceVersion - Version of the lang file in jar
+	 * @param diskVersion - Version of the lang file on disk
+	 * @return - If source is newer than disk
+	 */
+	private static boolean compareVersion(String sourceVersion, String diskVersion){
+		List<Integer> version1Components = Arrays.stream(sourceVersion.split("\\."))
+				.map(Integer::parseInt)
+				.collect(Collectors.toList());
+		List<Integer> version2Components = Arrays.stream(diskVersion.split("\\."))
+				.map(Integer::parseInt)
+				.collect(Collectors.toList());
+
+		int maxLength = Math.max(version1Components.size(), version2Components.size());
+
+		for (int i = 0; i < maxLength; i++) {
+			int v1Component = i < version1Components.size() ? version1Components.get(i) : 0;
+			int v2Component = i < version2Components.size() ? version2Components.get(i) : 0;
+
+			if (v1Component > v2Component) {
+				return true;
+			} else if (v1Component < v2Component) {
+				return false;
+			}
+		}
+
+		return false;
 	}
 
 	private static boolean sortFileOnDisk(File onDisk) {
@@ -281,6 +317,37 @@ public class Messages {
 		if (plugin.getConfigManager().debug) {
 			Bukkit.getServer().getConsoleSender().sendMessage(BagOfGold.PREFIX_DEBUG + String.format(message, args));
 		}
+	}
+
+
+	/**
+	 * Show console message
+	 *
+	 * @param message
+	 * @param args
+	 */
+	public void notice(String message, Object... args) {
+		Bukkit.getServer().getConsoleSender().sendMessage(BagOfGold.PREFIX  + " " + String.format(message, args));
+	}
+
+	/**
+	 * Show console warning
+	 *
+	 * @param message
+	 * @param args
+	 */
+	public void warning(String message, Object... args) {
+		Bukkit.getServer().getConsoleSender().sendMessage(BagOfGold.PREFIX_WARNING + " " + String.format(message, args));
+	}
+
+	/**
+	 * Show console error
+	 *
+	 * @param message
+	 * @param args
+	 */
+	public void error(String message, Object... args) {
+		Bukkit.getServer().getConsoleSender().sendMessage(BagOfGold.PREFIX_ERROR  + " " + String.format(message, args));
 	}
 
 	public void playerSendMessage(final Player player, String message) {
