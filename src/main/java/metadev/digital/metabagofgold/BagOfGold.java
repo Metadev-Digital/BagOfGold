@@ -13,7 +13,7 @@ import metadev.digital.metabagofgold.storage.DataStoreManager;
 import metadev.digital.metabagofgold.storage.IDataStore;
 import metadev.digital.metabagofgold.storage.MySQLDataStore;
 import metadev.digital.metabagofgold.storage.SQLiteDataStore;
-//import metadev.digital.metabagofgold.update.SpigetUpdater;
+import metadev.digital.metabagofgold.update.UpdateManager;
 import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
 import metadev.digital.metacustomitemslib.server.Servers;
 import metadev.digital.metacustomitemslib.storage.DataStoreException;
@@ -39,7 +39,7 @@ public class BagOfGold extends JavaPlugin {
 	private RewardManager mRewardManager;
 	private CompatibilityManager mCompatibilityManager;
 	private BankManager mBankManager;
-	//private SpigetUpdater mSpigetUpdater;
+	private static UpdateManager mUpdateManager;
 	private PlayerBalanceManager mPlayerBalanceManager;
 	private GringottsItems mGringottsItems;
 	private BagOfGoldItems mBagOfGoldItems;
@@ -96,10 +96,6 @@ public class BagOfGold extends JavaPlugin {
 			}
 		}
 
-		/**
-		mSpigetUpdater = new SpigetUpdater(this);
-		mSpigetUpdater.setCurrentJarFile(this.getFile().getName());
-		 */
 
 		// Register commands
 		mCommandDispatcher = new CommandDispatcher(this, "bagofgold",
@@ -117,8 +113,9 @@ public class BagOfGold extends JavaPlugin {
 		mCommandDispatcher.registerCommand(new MuteCommand(this));
 		mCommandDispatcher.registerCommand(new DatabaseCommand(this));
 
-		/* Check for new BagOfGold updates
-		mSpigetUpdater.hourlyUpdateCheck(getServer().getConsoleSender(), mConfig.updateCheck, false);*/
+		// Check for new updates
+		mUpdateManager = new UpdateManager(this);
+		mUpdateManager.processCheckResultInConsole();
 
 		if (mConfig.databaseType.equalsIgnoreCase("mysql"))
 			mStore = new MySQLDataStore(this);
@@ -283,9 +280,7 @@ public class BagOfGold extends JavaPlugin {
 		return mCompatibilityManager;
 	}
 
-	/**public SpigetUpdater getSpigetUpdater() {
-		return mSpigetUpdater;
-	}*/
+	public static UpdateManager getUpdater() {	return mUpdateManager;	}
 
 	public PlayerBalanceManager getPlayerBalanceManager() {
 		return mPlayerBalanceManager;

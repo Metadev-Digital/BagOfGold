@@ -253,14 +253,6 @@
 			<version>1.9.8</version>
 		</dependency>-->
 
-		<!-- SpigetUpdate Possibly deprecated -->
-<!--		<dependency>-->
-<!--			<groupId>org.inventivetalent.spiget-update</groupId>-->
-<!--			<artifactId>bukkit</artifactId>-->
-<!--			<version>${spigetupdate.version}</version>-->
-<!--			<scope>compile</scope>-->
-<!--		</dependency>-->
-
 		<!-- Shopkeepers Currently no 1.21 support-->
 <!--		<dependency>-->
 <!--			<groupId>com.nisovin.shopkeepers</groupId>-->
@@ -321,7 +313,7 @@
 			<url>https://maven.citizensnpcs.co/repo</url>
 		</repository>
 
-		<!-- Inventive Repo / SpigetUpdater / BossBarAPI -->
+		<!-- Inventive Repo / BossBarAPI -->
 		<repository>
 			<id>inventive-repo</id>
 			<url>https://repo.inventivetalent.org/repository/public/</url>

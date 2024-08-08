@@ -1,7 +1,6 @@
 package metadev.digital.metabagofgold.commands;
 
 import metadev.digital.metabagofgold.BagOfGold;
-//import metadev.digital.metacustomitemslib.update.UpdateStatus;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
@@ -52,14 +51,7 @@ public class UpdateCommand implements ICommand {
 
 	@Override
 	public boolean onCommand(CommandSender sender, String label, String[] args) {
-		/**if (plugin.getSpigetUpdater().getUpdateAvailable() == UpdateStatus.AVAILABLE) {
-			plugin.getSpigetUpdater().checkForUpdate(sender, false, true);
-			//TODO: Core.getInstance().getSpigetUpdater().checkForUpdate(sender, false, true);
-		} else if (plugin.getSpigetUpdater().getUpdateAvailable() == UpdateStatus.RESTART_NEEDED)
-			plugin.getMessages().senderSendMessage(sender,
-					ChatColor.GREEN + plugin.getMessages().getString("bagofgold.commands.update.complete"));
-		else
-			plugin.getSpigetUpdater().checkForUpdate(sender, false, true);*/
+		plugin.getMessages().senderSendMessage(sender, ChatColor.GREEN + BagOfGold.getUpdater().processCheckResultInChat());
 		return true;
 	}
 
