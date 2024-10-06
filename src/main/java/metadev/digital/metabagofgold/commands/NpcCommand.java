@@ -185,8 +185,8 @@ public class NpcCommand implements ICommand, Listener {
 				npc.getOrAddTrait(LookClose.class).toggle();
 				npc.getOrAddTrait(SkinTrait.class).setSkinPersistent(plugin.getConfigManager().bankerName,
 						plugin.getConfigManager().bankerSignature, plugin.getConfigManager().bankerTexture);
-				ItemStack is = CoreCustomItems.getCustomtexture(new Reward(),
-						Core.getConfigManager().skullTextureValue, Core.getConfigManager().skullTextureSignature);
+				ItemStack is = CoreCustomItems.getCustomTexture(new Reward(),
+						Core.getConfigManager().skullTextureURL);
 				npc.getOrAddTrait(Equipment.class).set(EquipmentSlot.OFF_HAND, is);
 				npc.setName(plugin.getConfigManager().bankerName);
 				npc.spawn(p.getLocation());

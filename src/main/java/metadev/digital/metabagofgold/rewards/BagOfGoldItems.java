@@ -73,9 +73,9 @@ public class BagOfGoldItems implements Listener {
 			if (Core.getConfigManager().rewardItemtype.equalsIgnoreCase("SKULL")) {
 				rewardType = RewardType.BAGOFGOLD;
 				skinuuid = UUID.fromString(RewardType.BAGOFGOLD.getUUID());
-				is = CoreCustomItems.getCustomtexture(
+				is = CoreCustomItems.getCustomTexture(
 						new Reward(Core.getConfigManager().bagOfGoldName, nextBag, rewardType, skinuuid),
-						Core.getConfigManager().skullTextureValue, Core.getConfigManager().skullTextureSignature);
+						Core.getConfigManager().skullTextureURL);
 			} else { // ITEM
 				rewardType = RewardType.ITEM;
 				skinuuid = null;
