@@ -1,5 +1,5 @@
-bagofgold.command.base.description=Version de BagOfGold
-bagofgold.config.fail=Il y a eu un problème en chargeant la configuration de BagOfGold
+bagofgold.command.base.description=Version de Meta BagOfGold
+bagofgold.config.fail=Il y a eu un problème en chargeant la configuration de Meta BagOfGold
 bagofgold.hook.econ=Impossible de détecter une économie ! Vérifies que tu as bien une économie active et compatible avec Vault.
 bagofgold.hook.econ.reserve=Impossible de détecter une économie ! Vérifies que tu as bien une économie active qui est compatible avec Reserve.
 bagofgold.moneypickup=Tu as ramassé ${money} ${rewardname} !
