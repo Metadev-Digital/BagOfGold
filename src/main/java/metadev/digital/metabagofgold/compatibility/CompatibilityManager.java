@@ -1,7 +1,7 @@
 package metadev.digital.metabagofgold.compatibility;
 
 import metadev.digital.metabagofgold.BagOfGold;
-import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
+import metadev.digital.metacustomitemslib.compatibility.enums.SupportedPluginEntities;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -16,14 +16,14 @@ public class CompatibilityManager implements Listener {
 
 	private BagOfGold plugin;
 	private static HashSet<Object> mCompatClasses = new HashSet<Object>();
-	private static HashMap<CompatPlugin, Class<?>> mWaitingCompatClasses = new HashMap<CompatPlugin, Class<?>>();
+	private static HashMap<SupportedPluginEntities, Class<?>> mWaitingCompatClasses = new HashMap<SupportedPluginEntities, Class<?>>();
 
 	public CompatibilityManager(BagOfGold plugin) {
 		this.plugin = plugin;
 		Bukkit.getPluginManager().registerEvents(this, BagOfGold.getInstance());
 	}
 
-	public void registerPlugin(@SuppressWarnings("rawtypes") Class c, CompatPlugin pluginName) {
+	public void registerPlugin(@SuppressWarnings("rawtypes") Class c, SupportedPluginEntities pluginName) {
 		try {
 			register(c, pluginName);
 		} catch (Exception e) {
@@ -42,7 +42,7 @@ public class CompatibilityManager implements Listener {
 	 * @param compatibilityHandler The class that will be created
 	 * @param pluginName           The name of the plugin to check
 	 */
-	private void register(Class<?> compatibilityHandler, CompatPlugin pluginName) {
+	private void register(Class<?> compatibilityHandler, SupportedPluginEntities pluginName) {
 		if (Bukkit.getPluginManager().isPluginEnabled(pluginName.getName())) {
 			try {
 				mCompatClasses.add(compatibilityHandler.newInstance());
@@ -71,7 +71,7 @@ public class CompatibilityManager implements Listener {
 
 	@EventHandler(priority = EventPriority.NORMAL)
 	private void onPluginEnabled(PluginEnableEvent event) {
-		CompatPlugin compatPlugin = CompatPlugin.getCompatPlugin(event.getPlugin().getName());
+		SupportedPluginEntities compatPlugin = SupportedPluginEntities.getSupportedPlugin(event.getPlugin().getName());
 		if (mWaitingCompatClasses.containsKey(compatPlugin)) {
 			registerPlugin(mWaitingCompatClasses.get(compatPlugin), compatPlugin);
 			mWaitingCompatClasses.remove(compatPlugin);

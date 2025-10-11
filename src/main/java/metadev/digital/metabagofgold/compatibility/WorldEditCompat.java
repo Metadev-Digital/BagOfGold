@@ -2,8 +2,8 @@ package metadev.digital.metabagofgold.compatibility;
 
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import metadev.digital.metabagofgold.BagOfGold;
-import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
-import metadev.digital.metacustomitemslib.server.Servers;
+import metadev.digital.metacustomitemslib.compatibility.enums.SupportedPluginEntities;
+import metadev.digital.metacustomitemslib.server.Server;
 import org.bukkit.Bukkit;
 
 public class WorldEditCompat {
@@ -15,8 +15,8 @@ public class WorldEditCompat {
 			Bukkit.getConsoleSender()
 					.sendMessage(BagOfGold.PREFIX + "Compatibility with WorldEdit is disabled in config.yml");
 		} else {
-			mPlugin = (WorldEditPlugin) Bukkit.getPluginManager().getPlugin(CompatPlugin.WorldEdit.getName());
-			if (Servers.isMC113OrNewer()) {
+			mPlugin = (WorldEditPlugin) Bukkit.getPluginManager().getPlugin(SupportedPluginEntities.WorldEdit.getName());
+			if (Server.isMC113OrNewer()) {
 				if (mPlugin.getDescription().getVersion().compareTo("7.0.0") >= 0) {
 					Bukkit.getConsoleSender().sendMessage(BagOfGold.PREFIX + "Enabling compatibility with WorldEdit ("
 							+ mPlugin.getDescription().getVersion() + ")");

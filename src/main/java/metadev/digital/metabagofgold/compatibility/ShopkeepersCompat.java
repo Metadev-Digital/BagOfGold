@@ -2,10 +2,9 @@ package metadev.digital.metabagofgold.compatibility;
 
 import metadev.digital.metabagofgold.BagOfGold;
 import metadev.digital.metacustomitemslib.Core;
-import metadev.digital.metacustomitemslib.compatibility.BagOfGoldCompat;
-import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
+import metadev.digital.metacustomitemslib.compatibility.enums.SupportedPluginEntities;
 import metadev.digital.metacustomitemslib.rewards.Reward;
-import metadev.digital.metacustomitemslib.server.Servers;
+import metadev.digital.metacustomitemslib.server.Server;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -29,7 +28,7 @@ public class ShopkeepersCompat implements Listener {
 			Bukkit.getConsoleSender()
 					.sendMessage(BagOfGold.PREFIX + "Compatibility with Shopkeepers is disabled in config.yml");
 		} else {
-			mPlugin = Bukkit.getPluginManager().getPlugin(CompatPlugin.Shopkeepers.getName());
+			mPlugin = Bukkit.getPluginManager().getPlugin(SupportedPluginEntities.Shopkeepers.getName());
 			Bukkit.getConsoleSender().sendMessage(BagOfGold.PREFIX + "Enabling compatibility with Shopkeepers ("
 					+ getShopkeepers().getDescription().getVersion() + ")");
 			supported = true;
@@ -83,9 +82,9 @@ public class ShopkeepersCompat implements Listener {
 
 		SlotType slotType = event.getSlotType();
 		Inventory inventory = event.getInventory();
-		Inventory clickedInventory = Servers.isMC113OrNewer() ? event.getClickedInventory() : inventory;
+		Inventory clickedInventory = Server.isMC113OrNewer() ? event.getClickedInventory() : inventory;
 
-		if (inventory.getType() == InventoryType.MERCHANT && BagOfGoldCompat.isSupported()) {
+		if (inventory.getType() == InventoryType.MERCHANT && Core.getCompatibilityManager().isCompatibilityLoaded(Bukkit.getPluginManager().getPlugin(SupportedPluginEntities.BagOfGold.getName()))) {
 			Core.getMessages().debug(
 					"action=%s, InvType=%s, clickedInvType=%s, slottype=%s, slotno=%s, current=%s, cursor=%s, view=%s, keyboardClick=%s, numberKey=%s, swap_hand=%s",
 					action, inventory.getType(), clickedInventory == null ? "null" : clickedInventory.getType(),

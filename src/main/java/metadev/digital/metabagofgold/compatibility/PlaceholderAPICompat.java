@@ -5,7 +5,7 @@ import metadev.digital.metabagofgold.BagOfGold;
 import metadev.digital.metabagofgold.placeholder.BagOfGoldPlaceholderExpansion;
 import metadev.digital.metabagofgold.placeholder.PlaceHolderData;
 import metadev.digital.metabagofgold.placeholder.PlaceHolderManager;
-import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
+import metadev.digital.metacustomitemslib.compatibility.enums.SupportedPluginEntities;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -27,7 +27,7 @@ public class PlaceholderAPICompat {
 			Bukkit.getConsoleSender().sendMessage(
 					BagOfGold.PREFIX_WARNING + "Compatibility with PlaceholderAPI is disabled in config.yml");
 		} else {
-			mPlugin = Bukkit.getPluginManager().getPlugin(CompatPlugin.PlaceholderAPI.getName());
+			mPlugin = Bukkit.getPluginManager().getPlugin(SupportedPluginEntities.PlaceholderAPI.getName());
 			if (mPlugin.getDescription().getVersion().compareTo("2.11.1") >= 0) {
 				Bukkit.getConsoleSender().sendMessage(BagOfGold.PREFIX + "Enabling compatibility with PlaceholderAPI ("
 						+ mPlugin.getDescription().getVersion() + ").");
