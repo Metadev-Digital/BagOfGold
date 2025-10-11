@@ -5,7 +5,7 @@ import metadev.digital.metacustomitemslib.Core;
 import metadev.digital.metacustomitemslib.Tools;
 import metadev.digital.metacustomitemslib.materials.Materials;
 import metadev.digital.metacustomitemslib.rewards.Reward;
-import metadev.digital.metacustomitemslib.server.Servers;
+import metadev.digital.metacustomitemslib.server.Server;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.block.Block;
@@ -38,7 +38,7 @@ public class BankSign implements Listener {
 		if (event.isCancelled())
 			return;
 
-		if (Servers.isMC19OrNewer() && (event.getHand() == null || event.getHand().equals(EquipmentSlot.OFF_HAND)))
+		if (Server.isMC19OrNewer() && (event.getHand() == null || event.getHand().equals(EquipmentSlot.OFF_HAND)))
 			return;
 
 		Block clickedBlock = event.getClickedBlock();

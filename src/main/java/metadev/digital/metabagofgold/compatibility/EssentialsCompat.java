@@ -3,7 +3,7 @@ package metadev.digital.metabagofgold.compatibility;
 import com.earth2me.essentials.Essentials;
 import com.earth2me.essentials.User;
 import metadev.digital.metabagofgold.BagOfGold;
-import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
+import metadev.digital.metacustomitemslib.compatibility.enums.SupportedPluginEntities;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.configuration.InvalidConfigurationException;
@@ -25,7 +25,7 @@ public class EssentialsCompat {
 					.sendMessage(BagOfGold.PREFIX + "Compatibility with Essentials is disabled in config.yml");
 			this.plugin = BagOfGold.getInstance();
 		} else {
-			mPlugin = (Essentials) Bukkit.getPluginManager().getPlugin(CompatPlugin.Essentials.getName());
+			mPlugin = (Essentials) Bukkit.getPluginManager().getPlugin(SupportedPluginEntities.Essentials.getName());
 
 			Bukkit.getConsoleSender().sendMessage(BagOfGold.PREFIX + "Enabling compatibility with Essentials ("
 					+ getEssentials().getDescription().getVersion() + ")");

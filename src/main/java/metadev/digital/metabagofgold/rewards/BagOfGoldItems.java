@@ -6,7 +6,7 @@ import metadev.digital.metacustomitemslib.Tools;
 import metadev.digital.metacustomitemslib.rewards.CoreCustomItems;
 import metadev.digital.metacustomitemslib.rewards.Reward;
 import metadev.digital.metacustomitemslib.rewards.RewardType;
-import metadev.digital.metacustomitemslib.server.Servers;
+import metadev.digital.metacustomitemslib.server.Server;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.block.Skull;
@@ -203,7 +203,7 @@ public class BagOfGoldItems implements Listener {
 		if (event.getAction() != Action.RIGHT_CLICK_BLOCK)
 			return;
 
-		if (Servers.isMC19OrNewer() && event.getHand() != EquipmentSlot.HAND)
+		if (Server.isMC19OrNewer() && event.getHand() != EquipmentSlot.HAND)
 			return;
 
 		Player player = event.getPlayer();
@@ -223,7 +223,7 @@ public class BagOfGoldItems implements Listener {
 											? Tools.format(reward.getMoney())
 											: reward.getDisplayName() + " (" + Tools.format(reward.getMoney()) + ")"));
 			}
-		} else if (Servers.isMC113OrNewer()) {
+		} else if (Server.isMC113OrNewer()) {
 			if (block.getType() == Material.PLAYER_HEAD || block.getType() == Material.PLAYER_WALL_HEAD) {
 				Skull skullState = (Skull) block.getState();
 				OfflinePlayer owner = skullState.getOwningPlayer();

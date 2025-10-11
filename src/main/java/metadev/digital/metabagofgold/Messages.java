@@ -5,6 +5,9 @@ import metadev.digital.metabagofgold.compatibility.PlaceholderAPICompat;
 import metadev.digital.metacustomitemslib.Core;
 import metadev.digital.metacustomitemslib.Strings;
 import metadev.digital.metacustomitemslib.compatibility.*;
+import metadev.digital.metacustomitemslib.compatibility.addons.CMILibCompat;
+import metadev.digital.metacustomitemslib.compatibility.addons.TitleManagerCompat;
+import metadev.digital.metacustomitemslib.compatibility.enums.SupportedPluginEntities;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
@@ -388,9 +391,9 @@ public class Messages {
 			return;
 
 		final String final_message = PlaceholderAPICompat.setPlaceholders(player, message);
-		// TODO: TITLE MANAGER POSSIBLY DEPREACTED TitleManagerCompat.isSupported() || ActionbarCompat.isSupported() || ActionAnnouncerCompat.isSupported()
-		//				|| ActionBarAPICompat.isSupported() || CMICompat.isSupported()
-		if (ActionbarCompat.isSupported() || ActionBarAPICompat.isSupported() || CMICompat.isSupported()) {
+		if (Core.getCompatibilityManager().isCompatibilityLoaded(Bukkit.getPluginManager().getPlugin(SupportedPluginEntities.Actionbar.getName()))
+                || Core.getCompatibilityManager().isCompatibilityLoaded(Bukkit.getPluginManager().getPlugin(SupportedPluginEntities.TitleManager.getName()))
+                || Core.getCompatibilityManager().isCompatibilityLoaded(Bukkit.getPluginManager().getPlugin(SupportedPluginEntities.CMILib.getName()))) {
 			long last = 0L;
 			long time_between_messages = 80L;
 			long delay = 1L, now = System.currentTimeMillis();
@@ -428,16 +431,10 @@ public class Messages {
 			return;
 
 		message = Strings.convertColors(PlaceholderAPICompat.setPlaceholders(player, message));
-		/** TODO: TITLE MANAGER POSSIBLY DEPRECATED if (TitleManagerCompat.isSupported()) {
+		if (Core.getCompatibilityManager().isCompatibilityLoaded(Bukkit.getPluginManager().getPlugin(SupportedPluginEntities.TitleManager.getName()))) {
 			TitleManagerCompat.setActionBar(player, message);
-		} else */ if (ActionbarCompat.isSupported()) {
-			ActionbarCompat.setMessage(player, message);
-		} /** TODO: ACTION ANNOUNCER POSSIBLY DEPRECATE else if (ActionAnnouncerCompat.isSupported()) {
-			ActionAnnouncerCompat.setMessage(player, message);
-		}*/ else if (ActionBarAPICompat.isSupported()) {
-			ActionBarAPICompat.setMessage(player, message);
-		} else if (CMICompat.isSupported()) {
-			CMICompat.sendActionBarMessage(player, message);
+		} else if (Core.getCompatibilityManager().isCompatibilityLoaded(Bukkit.getPluginManager().getPlugin(SupportedPluginEntities.CMILib.getName()))) {
+			CMILibCompat.sendActionBarMessage(player, message);
 		} else {
 			if (!Core.getPlayerSettingsManager().getPlayerSettings(player).isMuted())
 				player.sendMessage(message);
@@ -471,12 +468,8 @@ public class Messages {
 
 		message = Strings.convertColors(PlaceholderAPICompat.setPlaceholders(player, message));
 
-		if (BossBarAPICompat.isSupported()) {
-			BossBarAPICompat.addBar(player, String.format(message, args));
-		} else if (BarAPICompat.isSupported()) {
-			BarAPICompat.setMessageTime(player, String.format(message, args), 5);
-		} else if (CMICompat.isSupported()) {
-			CMICompat.sendBossBarMessage(player, String.format(message, args));
+		if (Core.getCompatibilityManager().isCompatibilityLoaded(Bukkit.getPluginManager().getPlugin(SupportedPluginEntities.CMILib.getName()))) {
+			CMILibCompat.sendBossBarMessage(player, String.format(message, args));
 		} else {
 			player.sendMessage(
 					ChatColor.AQUA + getString("bagofgold.learn.prefix") + " " + String.format(message, args));

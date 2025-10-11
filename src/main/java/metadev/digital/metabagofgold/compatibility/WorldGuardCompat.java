@@ -8,8 +8,8 @@ import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import com.sk89q.worldguard.protection.regions.RegionContainer;
 import com.sk89q.worldguard.protection.regions.RegionQuery;
 import metadev.digital.metabagofgold.BagOfGold;
-import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
-import metadev.digital.metacustomitemslib.server.Servers;
+import metadev.digital.metacustomitemslib.compatibility.enums.SupportedPluginEntities;
+import metadev.digital.metacustomitemslib.server.Server;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -25,8 +25,8 @@ public class WorldGuardCompat {
 			Bukkit.getConsoleSender()
 					.sendMessage(BagOfGold.PREFIX_WARNING + "Compatibility with WorldGuard is disabled in config.yml");
 		} else {
-			mPlugin = (WorldGuardPlugin) Bukkit.getPluginManager().getPlugin(CompatPlugin.WorldGuard.getName());
-			if (Servers.isMC113OrNewer()) {
+			mPlugin = (WorldGuardPlugin) Bukkit.getPluginManager().getPlugin(SupportedPluginEntities.WorldGuard.getName());
+			if (Server.isMC113OrNewer()) {
 				if (mPlugin.getDescription().getVersion().compareTo("7.0.0") >= 0) {
 					Bukkit.getConsoleSender().sendMessage(BagOfGold.PREFIX + "Enabling compatibility with WorldGuard ("
 							+ mPlugin.getDescription().getVersion() + ")");

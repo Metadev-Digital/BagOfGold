@@ -14,8 +14,8 @@ import metadev.digital.metabagofgold.storage.IDataStore;
 import metadev.digital.metabagofgold.storage.MySQLDataStore;
 import metadev.digital.metabagofgold.storage.SQLiteDataStore;
 import metadev.digital.metabagofgold.update.UpdateManager;
-import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
-import metadev.digital.metacustomitemslib.server.Servers;
+import metadev.digital.metacustomitemslib.compatibility.enums.SupportedPluginEntities;
+import metadev.digital.metacustomitemslib.server.Server;
 import metadev.digital.metacustomitemslib.storage.DataStoreException;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -51,6 +51,16 @@ public class BagOfGold extends JavaPlugin {
 	public static final String PREFIX_DEBUG = ChatColor.GOLD + "[BagOfGold][Debug] " + ChatColor.RESET;
 	public static final String PREFIX_WARNING = ChatColor.GOLD + "[BagOfGold][Warning] " + ChatColor.RED;
 	public static final String PREFIX_ERROR = ChatColor.GOLD + "[BagOfGold][Error] " + ChatColor.RED;
+
+    // TODO: FINISH REMOVING DEPRECATED SERVER VERSION CALLS
+    // TODO: HANDLE PREFIXES AND MESSAGES SIMILAR TO MCIL AND MMH
+    // TODO: MESSAGEHELPER NEEDS TO USE ACTIONBARHELPER FROM MCIL, OR MAYBE HANDLE MORE OF THESE INTERNALLY?
+
+    // PROJECT HEALTH REMAINING OBJECTIVES
+    // TODO: ADD NEW TRANSLATION LANGUAGES TO MBOG
+    // TODO: ADD NEW TRANSLATIONS FOR NEW COMPAT FEATURE CONSOLE MESSAGES & CONFIG MIGRATION PROCESS
+    // TODO: AUDIT CONFIG AND APPLY A NEW VERSION
+    // TODO: ADD UNIT TESTS VIA MOCKBUKKIT
 
 	@Override
 	public void onLoad() {
@@ -145,21 +155,21 @@ public class BagOfGold extends JavaPlugin {
 
 		mCompatibilityManager = new CompatibilityManager(this);
 
-		//TODO: PerWorldInventory is possibly deprecated mCompatibilityManager.registerPlugin(PerWorldInventoryCompat.class, CompatPlugin.PerWorldInventory);
-		if (!Servers.isSpigotServer() && !Servers.isPaperServer() && !Servers.isPurpurServer())
+		//TODO: PerWorldInventory is possibly deprecated mCompatibilityManager.registerPlugin(PerWorldInventoryCompat.class, SupportedPluginEntities.PerWorldInventory);
+		if (!Server.isSpigotServer() && !Server.isPaperServer() && !Server.isPurpurServer())
 			Bukkit.getConsoleSender().sendMessage(PREFIX_WARNING + "This is server (" + Bukkit.getServer().getName()
 					+ ") is not tested with the BagOfGold-Citizens integration");
-		mCompatibilityManager.registerPlugin(CitizensCompat.class, CompatPlugin.Citizens);
-		mCompatibilityManager.registerPlugin(EssentialsCompat.class, CompatPlugin.Essentials);
+		mCompatibilityManager.registerPlugin(CitizensCompat.class, SupportedPluginEntities.Citizens);
+		mCompatibilityManager.registerPlugin(EssentialsCompat.class, SupportedPluginEntities.Essentials);
 
-		mCompatibilityManager.registerPlugin(WorldEditCompat.class, CompatPlugin.WorldEdit);
-		mCompatibilityManager.registerPlugin(WorldGuardCompat.class, CompatPlugin.WorldGuard);
+		mCompatibilityManager.registerPlugin(WorldEditCompat.class, SupportedPluginEntities.WorldEdit);
+		mCompatibilityManager.registerPlugin(WorldGuardCompat.class, SupportedPluginEntities.WorldGuard);
 
-		mCompatibilityManager.registerPlugin(PlaceholderAPICompat.class, CompatPlugin.PlaceholderAPI);
+		mCompatibilityManager.registerPlugin(PlaceholderAPICompat.class, SupportedPluginEntities.PlaceholderAPI);
 
-		mCompatibilityManager.registerPlugin(ShopkeepersCompat.class, CompatPlugin.Shopkeepers);
+		mCompatibilityManager.registerPlugin(ShopkeepersCompat.class, SupportedPluginEntities.Shopkeepers);
 
-		if (!Servers.isGlowstoneServer()) {
+		if (!Server.isGlowstoneServer()) {
 			mMetricsManager = new MetricsManager(this);
 			mMetricsManager.startBStatsMetrics();
 		}

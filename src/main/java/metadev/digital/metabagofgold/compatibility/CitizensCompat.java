@@ -2,13 +2,12 @@ package metadev.digital.metabagofgold.compatibility;
 
 import net.citizensnpcs.api.CitizensAPI;
 import net.citizensnpcs.api.CitizensPlugin;
-import net.citizensnpcs.api.event.CitizensDisableEvent;
 import net.citizensnpcs.api.event.CitizensEnableEvent;
 import net.citizensnpcs.api.npc.NPC;
 import net.citizensnpcs.api.trait.TraitInfo;
 import metadev.digital.metabagofgold.BagOfGold;
 import metadev.digital.metabagofgold.bank.BagOfGoldBankerTrait;
-import metadev.digital.metacustomitemslib.compatibility.CompatPlugin;
+import metadev.digital.metacustomitemslib.compatibility.enums.SupportedPluginEntities;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -29,7 +28,7 @@ public class CitizensCompat implements Listener {
 			Bukkit.getConsoleSender()
 					.sendMessage(BagOfGold.PREFIX + "Compatibility with Citizens2 is disabled in config.yml");
 		} else {
-			citizensAPI = (CitizensPlugin) Bukkit.getPluginManager().getPlugin(CompatPlugin.Citizens.getName());
+			citizensAPI = (CitizensPlugin) Bukkit.getPluginManager().getPlugin(SupportedPluginEntities.Citizens.getName());
 			if (citizensAPI == null)
 				return;
 
@@ -128,12 +127,6 @@ public class CitizensCompat implements Listener {
 	private void onCitizensEnableEvent(CitizensEnableEvent event) {
 		plugin.getMessages().debug("Citizens2 was enabled");
 		supported = true;
-	}
-
-	@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
-	private void onCitizensDisableEvent(CitizensDisableEvent event) {
-		plugin.getMessages().debug("Citizens2 was disabled");
-		supported = false;
 	}
 
 }

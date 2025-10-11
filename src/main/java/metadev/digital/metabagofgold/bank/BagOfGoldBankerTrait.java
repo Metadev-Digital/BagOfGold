@@ -5,7 +5,7 @@ import net.citizensnpcs.api.trait.Trait;
 import net.citizensnpcs.api.util.DataKey;
 import net.citizensnpcs.trait.SkinTrait;
 import metadev.digital.metabagofgold.BagOfGold;
-import metadev.digital.metacustomitemslib.server.Servers;
+import metadev.digital.metacustomitemslib.server.Server;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -69,7 +69,7 @@ public class BagOfGoldBankerTrait extends Trait implements Listener {
 			return;
 
 		Player player = event.getClicker();
-		if (Servers.isSpigotServer() || Servers.isPaperServer()) {
+		if (Server.isSpigotServer() || Server.isPaperServer()) {
 			plugin.getMessages().playerSendMessage(player,
 					" \n" + plugin.getMessages().getString("bagofgold.banker.introduction","bankername",plugin.getConfigManager().bankerName));
 			plugin.getBankManager().sendBankerMessage(player);
