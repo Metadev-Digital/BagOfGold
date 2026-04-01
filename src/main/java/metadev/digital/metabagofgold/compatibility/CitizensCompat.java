@@ -52,8 +52,7 @@ public class CitizensCompat implements Listener {
 
 	public void shutdown() {
 		if (supported) {
-			TraitInfo trait = TraitInfo.create(BagOfGoldBankerTrait.class).withName("BagOfGoldBanker");
-			citizensAPI.getTraitFactory().deregisterTrait(trait);
+			// Trait no longer needs registered TODO: Replace with shutdown messaging
 		}
 	}
 
