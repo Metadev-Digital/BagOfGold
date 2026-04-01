@@ -7,7 +7,7 @@ author: JebusChrystler
 depend: [CustomItemsLib]
 loadbefore: [MobHunting]
 softdepend: [Reserve, PerWorldInventory, Citizens, Essentials, ProtocolLib, ItemFrameShops, Multiverse-Core, Shopkeepers, TitleManager]
-api-version: 26.1.1
+api-version: 26.1
 
 commands:
   bagofgold:
